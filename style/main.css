@@ -1,4 +1,6 @@
 
 @import url(./base.css);
+@import url(./layout/header.css);
+@import url(./modules/banner.css);
 @import url(./modules/displayer.css);
 @import url(./modules/tabs.css);

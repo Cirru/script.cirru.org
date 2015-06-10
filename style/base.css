@@ -7,3 +7,7 @@ body {
 body * {
   box-sizing: border-box;
 }
+
+.page {
+    padding: 100px 10px 200px 10px;
+}

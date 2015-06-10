@@ -25,7 +25,7 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
     :name T.string.isRequired
 
   :getInitialState $ \ ()
-    var select ":Cirru AST"
+    var select ":JavaScript"
     return $ object
       :source this.props.code
       :select select
@@ -70,3 +70,4 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
             :onSelect this.onSelect
           textarea $ object (:className :compiled)
             :value $ this.tryCompile this.state.source this.state.select
+            :onChange $ \ ()

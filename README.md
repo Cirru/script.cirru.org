@@ -2,6 +2,8 @@
 CirruScript Home Page
 ----
 
+http://script.cirru.org/
+
 An introduction to CirruScript.
 
 ### Usage

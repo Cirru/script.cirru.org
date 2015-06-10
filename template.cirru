@@ -8,7 +8,7 @@ var
     stir.doctype
     html null
       head null
-        title null :Workflow
+        title null :CirruScript
         meta $ object (:charset :utf-8)
         link $ object (:rel :icon)
           :href :http://logo.cirru.org/cirru-32x32.png
