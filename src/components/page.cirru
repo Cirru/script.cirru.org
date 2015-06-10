@@ -30,6 +30,7 @@ var
 var
   div $ React.createFactory :div
   span $ React.createFactory :span
+  a $ React.createFactory :a
 
 console.log
 
@@ -40,6 +41,11 @@ console.log
     return $ div (object (:className :page))
       div (object (:className :header))
         span (object (:className :name)) ":CirruScript"
+        a
+          object (:className :github)
+            :href :https://github.com/Cirru/Cirru-script
+            :target :_blank
+          , :GitHub
       Banner
       div (object (:className :body))
         Displayer $ object (:code exampleArray) (:name :Array)
