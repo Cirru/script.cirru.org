@@ -8,7 +8,7 @@ var
     :vendor $ array
       , :webpack-dev-server/client?http://0.0.0.0:8080
       , :webpack/hot/dev-server
-      , :react
+      , :react :cirru-script :scirpus :babel-core/browser
     :main $ array :./src/main
 
   :output $ object
@@ -22,6 +22,7 @@ var
   :module $ object
     :loaders $ array
       object (:test /\.cirru$) (:loader :cirru-script) (:ignore /node_modules)
+      object (:test /\.cr$) (:loader :raw) (:ignore /node_modules)
 
   :plugins $ array
     new webpack.optimize.CommonsChunkPlugin :vendor :vendor.js

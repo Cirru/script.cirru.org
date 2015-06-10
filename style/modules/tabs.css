@@ -1,0 +1,20 @@
+
+.tabs {
+    display: flex;
+    font-family: Futura;
+    font-size: 12px;
+}
+
+.tabs .tab {
+    padding: 0 10px;
+    cursor: pointer;
+    line-height: 2em;
+    background: hsl(240, 41%, 94%);
+    margin-right: 2px;
+    color: white;
+}
+
+.tabs .tab.is-selected {
+    background: hsl(270, 62%, 77%);
+    color: white;
+}

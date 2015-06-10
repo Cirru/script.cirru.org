@@ -1,0 +1,44 @@
+
+.displayer {
+    box-shadow: 0 0 1px;
+    padding: 10px 20px;
+}
+
+.displayer .name {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.displayer .compiler {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+}
+
+.displayer .compiler textarea {
+    border: none;
+    font-size: 14px;
+    font-family: Menlo, monospace;
+    line-height: 1.6em;
+    resize: none;
+    outline: none;
+    background: hsl(0, 52%, 96%);
+    padding: 0.5em;
+}
+
+.displayer .compiler .source {
+    flex: 1;
+    margin-right: 2px;
+}
+
+.displayer .compiler .result {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.displayer .compiler .compiled {
+    width: 100%;
+    flex: 1;
+}
