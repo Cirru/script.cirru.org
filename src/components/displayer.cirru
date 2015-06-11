@@ -4,6 +4,7 @@ var
   cirru $ require :cirru-parser
   scirpus $ require :scirpus
   babel $ require :babel-core/browser
+  indent $ require :textarea-indent
 
 var
   Tabs $ React.createFactory $ require :./tabs
@@ -29,6 +30,14 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
     return $ object
       :source this.props.code
       :select select
+
+  :componentDidMount $ \ ()
+    var node $ this.refs.source.getDOMNode
+    node.addEventListener :keydown indent.newlineHandler
+
+  :componentWillUnmount $ \ ()
+    var node $ this.refs.source.getDOMNode
+    node.removeEventListener :keydown indent.newlineHandler
 
   :compileCodeAs $ \ (code format)
     switch format
@@ -63,6 +72,7 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
       div (object (:className :compiler))
         textarea $ object (:className :source)
           :valueLink $ this.linkState :source
+          :ref :source
         div (object (:className :result))
           Tabs $ object
             :tabs tabs

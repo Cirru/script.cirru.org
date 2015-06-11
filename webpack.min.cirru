@@ -7,7 +7,7 @@ var
 = module.exports $ object
   :entry $ object
     :main $ array :./src/main
-    :vendor $ array :cirru-script :scirpus :babel-core/browser
+    :vendor $ array :cirru-script :scirpus :babel-core/browser :textarea-indent
 
   :output $ object
     :path :build/
