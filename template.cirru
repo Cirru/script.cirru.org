@@ -12,7 +12,7 @@ var
         meta $ object (:charset :utf-8)
         link $ object (:rel :icon)
           :href :http://logo.cirru.org/cirru-32x32.png
-        link $ object (:rel :stylesheet)
+        -- link $ object (:rel :stylesheet)
           :href :./style/main.css
         script $ object (:src data.vendor) (:defer true)
         script $ object (:src data.main) (:defer true)
