@@ -53,6 +53,7 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
         var res $ scirpus.transform res
         var res $ babel.fromAst res null (object)
         return res.code
+    return undefined
 
   :tryCompile $ \ (code format)
     try
@@ -61,6 +62,7 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
         return res
       err
         return err
+    return undefined
 
   :onSelect $ \ (tab)
     this.setState $ object
