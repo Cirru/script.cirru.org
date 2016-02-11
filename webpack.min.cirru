@@ -7,7 +7,7 @@ var
 = module.exports $ object
   :entry $ object
     :main $ array :./src/main
-    :vendor $ array :cirru-script :scirpus :babel-core/browser :textarea-indent
+    :vendor $ array :cirru-script :scirpus :babel-core :textarea-indent
 
   :output $ object
     :path :build/
@@ -25,3 +25,8 @@ var
           json $ stats.toJson
           content $ JSON.stringify json.assetsByChunkName null 2
         return $ fs.writeFileSync :build/assets.json content
+
+  :node $ {}
+    :fs :empty
+    :module :empty
+    :net :empty

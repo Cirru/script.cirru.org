@@ -1,5 +1,5 @@
 {
-  "name": "webpack-workflow",
+  "name": "script.cirru.org",
   "version": "0.0.1",
   "description": "Web app scaffold based on Webpack",
   "main": "main.js",
@@ -9,16 +9,17 @@
   "author": "jiyinyiyong",
   "license": "MIT",
   "keywords": [
-    "workflow"
+    "cirru"
   ],
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
-    "cirru-script": "^0.2.3",
-    "cirru-script-loader": "0.1.0",
+    "cirru-script": "0.5.2-1",
+    "cirru-script-loader": "0.5.2-1",
     "css-loader": "^0.14.5",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
-    "gulp-cirru-script": "^0.1.1",
+    "gulp-cirru-script": "0.5.2-1",
+    "json-loader": "^0.5.4",
     "raw-loader": "^0.5.1",
     "rsyncwrapper": "^0.4.2",
     "run-sequence": "^1.0.2",
@@ -28,19 +29,19 @@
     "webpack-dev-server": "^1.8.0"
   },
   "dependencies": {
-    "babel-core": "^5.5.6",
+    "babel-core": "6.5.1",
     "cirru-parser": "^0.10.2",
     "classnames": "^2.1.2",
     "react": "^0.13.3",
-    "scirpus": "^0.4.21",
+    "scirpus": "0.5.2",
     "textarea-indent": "0.0.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mvc-works/webpack-workflow.git"
+    "url": "https://github.com/Cirru/script.cirru.org.git"
   },
   "bugs": {
-    "url": "https://github.com/mvc-works/webpack-workflow/issues"
+    "url": "https://github.com/Cirru/script.cirru.org/issues"
   },
-  "homepage": "https://github.com/mvc-works/webpack-workflow"
+  "homepage": "https://github.com/Cirru/script.cirru.org"
 }

@@ -4,3 +4,5 @@ object
   :b $ array 2 3
   :c $ object
     :d 4
+
+{} :a 1 :+ :add

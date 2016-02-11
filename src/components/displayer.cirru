@@ -3,7 +3,7 @@ var
   React $ require :react/addons
   cirru $ require :cirru-parser
   scirpus $ require :scirpus
-  babel $ require :babel-core/browser
+  babel $ require :babel-core
   indent $ require :textarea-indent
 
 var
@@ -51,11 +51,12 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
       ":JavaScript"
         var res $ cirru.pare code
         var res $ scirpus.transform res
-        var res $ babel.fromAst res null (object)
+        var res $ babel.transformFromAst res null (object)
         return res.code
     return undefined
 
   :tryCompile $ \ (code format)
+    var res $ this.compileCodeAs code format
     try
       do
         var res $ this.compileCodeAs code format
