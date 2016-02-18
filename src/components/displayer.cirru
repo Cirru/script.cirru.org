@@ -56,7 +56,6 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
     return undefined
 
   :tryCompile $ \ (code format)
-    var res $ this.compileCodeAs code format
     try
       do
         var res $ this.compileCodeAs code format
