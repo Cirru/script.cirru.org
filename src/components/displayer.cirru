@@ -1,45 +1,37 @@
 
-var
-  React $ require :react/addons
-  cirru $ require :cirru-parser
-  scirpus $ require :scirpus
-  babel $ require :babel-core
-  indent $ require :textarea-indent
+import :./tabs Tabs
 
 var
-  Tabs $ React.createFactory $ require :./tabs
+  React $ require :react
+  cirru $ require :cirru-parser
+  scirpus $ require :scirpus
+  generator $ require :@babel/generator
+  indent $ require :textarea-indent
 
 var
   div $ React.createFactory :div
   span $ React.createFactory :span
   textarea $ React.createFactory :textarea
 
-var T React.PropTypes
-var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
+var tabs $ [] ":Cirru AST" ":ES6 AST" ":JavaScript"
 
-= module.exports $ React.createClass $ object
-  :displayName :displayer
-  :mixins $ array React.addons.LinkedStateMixin
+let Displayer $ \ (props)
 
-  :propTypes $ object
-    :code T.string.isRequired
-    :name T.string.isRequired
+  var
+    ([]~ selected setSelected) $ React.useState :JavaScript
+  var
+    ([]~ source setSource) $ React.useState props.code
 
-  :getInitialState $ \ ()
-    var select ":JavaScript"
-    return $ object
-      :source this.props.code
-      :select select
+  let sourceNodeRef $ React.useRef
 
-  :componentDidMount $ \ ()
-    var node $ this.refs.source.getDOMNode
-    node.addEventListener :keydown indent.newlineHandler
+  React.useEffect
+    \ ()
+      sourceNodeRef.current.addEventListener :keydown indent.newlineHandler
+      \ ()
+        sourceNodeRef.current.removeEventListener :keydown indent.newlineHandler
+    []
 
-  :componentWillUnmount $ \ ()
-    var node $ this.refs.source.getDOMNode
-    node.removeEventListener :keydown indent.newlineHandler
-
-  :compileCodeAs $ \ (code format)
+  let compileCodeAs $ \ (code format)
     switch format
       ":Cirru AST"
         var res $ cirru.pare code
@@ -51,35 +43,37 @@ var tabs $ array ":Cirru AST" ":ES6 AST" ":JavaScript"
       ":JavaScript"
         var res $ cirru.pare code
         var res $ scirpus.transform res
-        var res $ babel.transformFromAst res null (object)
+        var res $ generator.default res ({})
         return res.code
     return undefined
 
-  :tryCompile $ \ (code format)
+  let tryCompile $ \ (code format)
     try
       do
-        var res $ this.compileCodeAs code format
+        var res $ compileCodeAs code format
         return res
       err
         return err
     return undefined
 
-  :onSelect $ \ (tab)
-    this.setState $ object
-      :select tab
+  let onSelect $ \ (tab)
+    setSelected tab
 
-  :render $ \ ()
-    return $ div (object (:className :displayer))
-      div (object (:className :name)) this.props.name
-      div (object (:className :compiler))
-        textarea $ object (:className :source)
-          :valueLink $ this.linkState :source
-          :ref :source
-        div (object (:className :result))
-          Tabs $ object
-            :tabs tabs
-            :select this.state.select
-            :onSelect this.onSelect
-          textarea $ object (:className :compiled)
-            :value $ this.tryCompile this.state.source this.state.select
-            :onChange $ \ ()
+  div ({} (:className :displayer))
+    div ({} (:className :name)) props.name
+    div ({} (:className :compiler))
+      textarea $ {} (:className :source)
+        :value source
+        :onChange $ \ (event)
+          setSource event.target.value
+        :ref sourceNodeRef
+      div ({} (:className :result))
+        React.createElement Tabs $ {}
+          :tabs tabs
+          :select selected
+          :onSelect onSelect
+        textarea $ {} (:className :compiled)
+          :value $ tryCompile source selected
+          :onChange $ \ ()
+
+export default Displayer
