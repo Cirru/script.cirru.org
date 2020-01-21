@@ -1,9 +1,10 @@
 
 var
   React $ require :react
+  ReactDOM $ require :react-dom
 
 require :../style/main.css
 
-var Page $ React.createFactory $ require :./components/page
+import :./components/page Page
 
-React.render (Page) document.body
+ReactDOM.render (React.createElement Page) (document.querySelector ":#app")

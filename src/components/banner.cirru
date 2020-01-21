@@ -1,24 +1,22 @@
 
-var
-  React $ require :react
+import :react React
 
 var
   div $ React.createFactory :div
 
-= module.exports $ React.createClass $ object
-  :displayName :banner
+let Banner $ \ ()
+  div ({} (:className :banner))
+    div ({} (:className :scopes))
+      div ({} (:className :scope)) :Scirpus
+      div ({} (:className :scope)) :Babel
+    div ({} (:className :stages))
+      div ({} (:className :stage)) :Cirru
+      div ({} (:className :stage)) ":Cirru AST"
+      div ({} (:className :stage)) ":ES6 AST"
+      div ({} (:className :stage)) ":ES5 AST"
+      div ({} (:className :stage)) ":JavaScript"
+    div ({} (:className :arrow))
+      div ({} (:className :arrow-body))
+      div ({} (:className :arrow-head))
 
-  :render $ \ ()
-    return $ div (object (:className :banner))
-      div (object (:className :scopes))
-        div (object (:className :scope)) :Scirpus
-        div (object (:className :scope)) :Babel
-      div (object (:className :stages))
-        div (object (:className :stage)) :Cirru
-        div (object (:className :stage)) ":Cirru AST"
-        div (object (:className :stage)) ":ES6 AST"
-        div (object (:className :stage)) ":ES5 AST"
-        div (object (:className :stage)) ":JavaScript"
-      div (object (:className :arrow))
-        div (object (:className :arrow-body))
-        div (object (:className :arrow-head))
+export default Banner
