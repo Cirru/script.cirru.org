@@ -45,6 +45,8 @@ var html
           link $ {} :rel :stylesheet :href assets.style
         script $ {} :src assets.main :defer true
         style null ":body * {box-sizing: border-box;}"
+        cond (is env :release)
+          fs.readFileSync :assets/ga.html :utf8
       body ({} :style ":margin: 0;")
         div ({} :id :app)
 
