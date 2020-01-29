@@ -25,7 +25,7 @@ var
           :use :cirru-script-loader
         {} (:test /\.cr$)
           :use :raw-loader
-        {} (:test "/\.(png|jpg|gif)$")
+        {} (:test "/\\.(png|jpg|gif)$")
           :loader :url-loader
           :query $ {} (:limit 100)
         {} (:test /\.css$) $ :use

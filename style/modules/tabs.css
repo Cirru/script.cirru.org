@@ -1,20 +1,26 @@
 
 .tabs {
     display: flex;
-    font-family: Futura;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-family: Hind, Helvetica, sans serif;
     font-size: 12px;
 }
 
 .tabs .tab {
     padding: 0 10px;
     cursor: pointer;
-    line-height: 2em;
-    background: hsl(240, 41%, 94%);
-    margin-right: 2px;
-    color: white;
+    line-height: 24px;
+    background: hsl(240, 41%, 97%);
+    font-weight: 300;
+    border-right: 1px solid hsl(0,0%,88%);
+    color: #888;
+    width: 80px;
+    text-align: center;
 }
 
 .tabs .tab.is-selected {
-    background: hsl(270, 62%, 77%);
-    color: white;
+    /*background: hsl(270, 62%, 100%);*/
+    color: #000;
+    font-weight: 500;
 }

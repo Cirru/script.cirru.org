@@ -1,6 +1,63 @@
 
-@import url(./base.css);
-@import url(./layout/header.css);
-@import url(./modules/banner.css);
+
 @import url(./modules/displayer.css);
 @import url(./modules/tabs.css);
+
+body {
+  margin: 0;
+  font-family: Georgia;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: Hind, Helvetica, Arial, Sans serif;
+  font-size: 14px;
+}
+
+.footer {
+  background-color: hsl(200,100%,70%);
+  padding: 40px;
+  color: white;
+}
+
+.footer .footer-content {
+  max-width: 960px;
+  margin: auto;
+  min-height: 200px;
+}
+
+body {
+  background-color: hsl(200,100%,70%);
+}
+
+.body {
+  background-color: white;
+  padding: 80px 0;
+}
+
+.header {
+    padding: 120px 80px;
+    background-color: hsl(200,100%,70%);
+}
+
+.header .name {
+    font-family: Josefin Sans, Sans serif;
+    color: white;
+    font-size: 100px;
+    font-weight: lighter;
+}
+
+.header .github {
+    font-family: HelveticaNeue-Light;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.page-intro {
+  color: white;
+  font-size: 16px;
+  padding: 16px 40px;
+}

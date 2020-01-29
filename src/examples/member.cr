@@ -10,3 +10,5 @@
 console.log 1 2
 
 a.b c.d
+
+.log console 1 2
