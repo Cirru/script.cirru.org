@@ -1,8 +1,8 @@
 
-object
+{}
   :a 1
-  :b $ array 2 3
-  :c $ object
+  :b $ [] 2 3
+  :c $ {}
     :d 4
 
 {} :a 1 :+ :add

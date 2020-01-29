@@ -4,9 +4,11 @@ var a 0
 
 var (b 2) (c)
 
-= (object~ a b) c
-var $ (object~ a b) c
+= ({}~ a b) c
+var $ ({}~ a b) c
 
-= (array~ a b) c
+= ([]~ a b) c
 
-= (array~ a (d)) c
+= ([]~ a (d)) c
+
+let b 1

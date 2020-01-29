@@ -5,6 +5,6 @@ var
 
 require :../style/main.css
 
-import :./components/page Page
+import :./container Container
 
-ReactDOM.render (React.createElement Page) (document.querySelector ":#app")
+ReactDOM.render (React.createElement Container) (document.querySelector ":#app")

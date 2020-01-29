@@ -1,5 +1,4 @@
 
-
 var env :dev
 
 if (is process.env.env :release)
@@ -13,9 +12,12 @@ var
   ({}~ html head title meta link script body div style) stir
 
   logoUrl :http://logo.cirru.org/cirru-32x32.png
+  mainFonts $ cond (is env :dev)
+    , :http://localhost:8100/main-fonts.css
+    , :http://cdn.tiye.me/favored-fonts/main-fonts.css
   cdnUrl $ cond (is process.env.local :true) : :http://cdn.tiye.me/script.cirru.org/
 
-console.log ":Running mode" (or process.env.env :dev)
+console.log ":Running mode" env
 
 var assets
 case env
@@ -41,6 +43,7 @@ var html
         title null :CirruScript
         meta $ {} :charset :utf-8
         link $ {} :rel :icon :href logoUrl
+        link $ {} :rel :stylesheet :href mainFonts
         cond (? assets.style)
           link $ {} :rel :stylesheet :href assets.style
         script $ {} :src assets.main :defer true

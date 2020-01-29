@@ -1,10 +1,12 @@
 
 .displayer {
     padding: 10px 20px;
+    margin: auto;
+    max-width: 960px;
 }
 
 .displayer .name {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 2;
 }
 
@@ -17,17 +19,19 @@
 .displayer .compiler textarea {
     border: none;
     font-size: 14px;
-    font-family: Menlo, monospace;
+    font-family: Source Code Pro, Consolas, Menlo, monospace;
     line-height: 1.6em;
     resize: none;
     outline: none;
-    background: hsl(0, 52%, 96%);
-    padding: 0.5em;
+    background: hsl(0, 0%, 96%);
+    border: 1px solid hsl(0, 0%, 90%);
+    border-left: 0px;
+    padding: 8px 12px;
+    padding-bottom: 40px;
 }
 
 .displayer .compiler .source {
     flex: 1;
-    margin-right: 2px;
 }
 
 .displayer .compiler .result {
